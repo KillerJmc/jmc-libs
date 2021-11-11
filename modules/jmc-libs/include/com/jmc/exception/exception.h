@@ -1,17 +1,24 @@
+#pragma once
+
 #include <iostream>
 
-namespace jmc {
-	namespace exception {
+namespace jmc 
+{
+	/*
+		å¼‚å¸¸
+		Since:  1.0
+		Author: Jmc
+	*/
+	namespace exception 
+	{
 		/*
-			ÔËĞĞÊ±Òì³£
-			Since:  1.0
-			Author: Jmc
+			è¿è¡Œæ—¶å¼‚å¸¸
 		*/
 		class runtime_exception : public std::exception
 		{
 		public:
 			explicit runtime_exception(const std::string& _Message) : std::exception(_Message.c_str()) {
-				// ³õÊ¼»¯Ê±´òÓ¡Òì³£ĞÅÏ¢
+				// åˆå§‹åŒ–æ—¶æ‰“å°å¼‚å¸¸ä¿¡æ¯
 				std::cout << _Message << std::endl;
 			}
 		};

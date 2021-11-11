@@ -1,86 +1,98 @@
+#pragma once
+
 #include <iostream>
 #include <vector>
 
-namespace jmc {
+namespace jmc 
+{
 	/*
-		ÎÄ¼ş²Ù×÷
+		æ–‡ä»¶æ“ä½œ
 		Since:  1.0
 		Author: Jmc
 	*/
-	class file {
+	class file 
+	{
 	public:
 		/*
-			ÅĞ¶ÏÎÄ¼şÊÇ·ñ´æÔÚ
+			åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å­˜åœ¨
 			Params:
-				path: ÎÄ¼şÂ·¾¶
-			Returns: ÎÄ¼şÊÇ·ñ´æÔÚ
+				path: æ–‡ä»¶è·¯å¾„
+			Returns: æ–‡ä»¶æ˜¯å¦å­˜åœ¨
 		*/
 		static bool exists(const std::string& path);
 
 		/*
-			´´½¨ĞÂÎÄ¼ş
+			è¿”å›æ–‡ä»¶çš„ç»å¯¹è·¯å¾„
 			Params:
-				file_path: ÎÄ¼şÂ·¾¶
-			Returns: ÊÇ·ñ´´½¨³É¹¦
+				path: æ–‡ä»¶/æ–‡ä»¶å¤¹è·¯å¾„
+			Returns: ç»å¯¹è·¯å¾„
+		*/
+		static auto absolute_path(const std::string& path)->std::string;
+
+		/*
+			åˆ›å»ºæ–°æ–‡ä»¶
+			Params:
+				file_path: æ–‡ä»¶è·¯å¾„
+			Returns: æ˜¯å¦åˆ›å»ºæˆåŠŸ
 		*/
 		static bool create_new_file(const std::string& file_path);
 
 		/*
-			µİ¹é´´½¨ÎÄ¼ş¼Ğ
+			é€’å½’åˆ›å»ºæ–‡ä»¶å¤¹
 			Params:
-				dir_path: ÎÄ¼ş¼ĞÂ·¾¶
-			Retruns: ÊÇ·ñ´´½¨³É¹¦
+				dir_path: æ–‡ä»¶å¤¹è·¯å¾„
+			Retruns: æ˜¯å¦åˆ›å»ºæˆåŠŸ
 		*/
 		static bool create_directories(const std::string& dir_path);
 
 		/*
-			¶ÁÈ¡ÎÄ¼şÄÚÈİµ½×Ö·û´®
+			è¯»å–æ–‡ä»¶å†…å®¹åˆ°å­—ç¬¦ä¸²
 			Params:
-				path: ÎÄ¼şÂ·¾¶
-			Returns: ÎÄ¼şÄÚÈİ
+				path: æ–‡ä»¶è·¯å¾„
+			Returns: æ–‡ä»¶å†…å®¹
 		*/
 		static auto read(const std::string& path)->std::string;
 
 		/*
-			¶ÁÈ¡ÎÄ¼şËùÓĞĞĞµ½×Ö·û´®
+			è¯»å–æ–‡ä»¶æ‰€æœ‰è¡Œåˆ°å­—ç¬¦ä¸²
 			Params:
-				path: ÎÄ¼şÂ·¾¶
-			Returns: ÎÄ¼şÄÚÈİ
+				path: æ–‡ä»¶è·¯å¾„
+			Returns: æ–‡ä»¶å†…å®¹
 		*/
 		static auto lines(const std::string& path)->std::vector<std::string>;
 
 		/*
-			¶ÁÈ¡¶ş½øÖÆÎÄ¼şµÄËùÓĞ×Ö½Úµ½ÁĞ±íÖĞ
+			è¯»å–äºŒè¿›åˆ¶æ–‡ä»¶çš„æ‰€æœ‰å­—èŠ‚åˆ°åˆ—è¡¨ä¸­
 			Params:
-				path: ÎÄ¼şÂ·¾¶
-			Returns: ×Ö·ûÁĞ±í
+				path: æ–‡ä»¶è·¯å¾„
+			Returns: å­—ç¬¦åˆ—è¡¨
 		*/
 		static auto read_binary(const std::string& path)->std::vector<char>;
 
 		/*
-			½«×Ö·û´®Ğ´ÈëÎÄ¼ş
+			å°†å­—ç¬¦ä¸²å†™å…¥æ–‡ä»¶
 			Params:
-				s:      ÒªĞ´ÈëµÄ×Ö·û´®
-				path:   ÎÄ¼şÂ·¾¶
-				append: ÊÇ·ñÒÔ×·¼Ó·½Ê½Ğ´Èë
+				s:      è¦å†™å…¥çš„å­—ç¬¦ä¸²
+				path:   æ–‡ä»¶è·¯å¾„
+				append: æ˜¯å¦ä»¥è¿½åŠ æ–¹å¼å†™å…¥
 		*/
 		static void out(const std::string& s, const std::string& path, bool append = false);
 
 		/*
-			½«×Ö½ÚĞòÁĞĞ´ÈëÎÄ¼ş
+			å°†å­—èŠ‚åºåˆ—å†™å…¥æ–‡ä»¶
 			Params:
-				bytes:  ÒªĞ´ÈëµÄ×Ö½ÚĞòÁĞ
-				path:   ÎÄ¼şÂ·¾¶
-				append: ÊÇ·ñÒÔ×·¼Ó·½Ê½Ğ´Èë
+				bytes:  è¦å†™å…¥çš„å­—èŠ‚åºåˆ—
+				path:   æ–‡ä»¶è·¯å¾„
+				append: æ˜¯å¦ä»¥è¿½åŠ æ–¹å¼å†™å…¥
 		*/
 		static void out_binary(const std::vector<char> bytes, const std::string& path, bool append = false);
 
 		/*
-			½«×Ö½ÚÊı×éĞ´ÈëÎÄ¼ş
+			å°†å­—èŠ‚æ•°ç»„å†™å…¥æ–‡ä»¶
 			Params:
-				bytes:  ÒªĞ´ÈëµÄ×Ö½Ú
-				path:   ÎÄ¼şÂ·¾¶
-				append: ÊÇ·ñÒÔ×·¼Ó·½Ê½Ğ´Èë
+				bytes:  è¦å†™å…¥çš„å­—èŠ‚
+				path:   æ–‡ä»¶è·¯å¾„
+				append: æ˜¯å¦ä»¥è¿½åŠ æ–¹å¼å†™å…¥
 		*/
 		static void out_binary(const char* bytes, const std::string& path, bool append = false);
 	};

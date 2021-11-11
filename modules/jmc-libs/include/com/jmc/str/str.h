@@ -1,26 +1,30 @@
+#pragma once
+
 #include <iostream>
 
-namespace jmc {
+namespace jmc 
+{
 	/*
-		×Ö·û´®²Ù×÷
+		å­—ç¬¦ä¸²æ“ä½œ
 		Since:  1.0
 		Author: Jmc
 	*/
-	class str {
+	class str 
+	{
 	public:
 		/*
-			°Ñ×Ö·û´®×ªÎª´óÐ´
+			æŠŠå­—ç¬¦ä¸²è½¬ä¸ºå¤§å†™
 			Params:
-				s: ´«Èë×Ö·û´®
-			Returns: ½á¹û×Ö·û´®
+				s: ä¼ å…¥å­—ç¬¦ä¸²
+			Returns: ç»“æžœå­—ç¬¦ä¸²
 		*/
 		static auto to_upper_case(const std::string& s)->std::string;
 
 		/*
-			°Ñ×Ö·û´®×ªÎªÐ¡Ð´
+			æŠŠå­—ç¬¦ä¸²è½¬ä¸ºå°å†™
 			Params:
-				s: ´«Èë×Ö·û´®
-			Returns: ½á¹û×Ö·û´®
+				s: ä¼ å…¥å­—ç¬¦ä¸²
+			Returns: ç»“æžœå­—ç¬¦ä¸²
 		*/
 		static auto to_lower_case(const std::string& s)->std::string;
 	};

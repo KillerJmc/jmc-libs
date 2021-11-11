@@ -1,7 +1,8 @@
 #include <iostream>
 #include <str.h>
 
-namespace jmc {
+namespace jmc
+{
 	auto str::to_upper_case(const std::string& s) -> std::string
 	{
 		auto res(s);

@@ -3,10 +3,21 @@
 #include <file.h>
 #include <exception.h>
 
-namespace jmc {
+namespace jmc 
+{
 	bool file::exists(const std::string& path)
 	{
 		return std::filesystem::exists(path);
+	}
+
+	auto file::absolute_path(const std::string& path) -> std::string
+	{
+		if (!exists(path))
+		{
+			throw exception::runtime_exception("jmc::file::absolute_path: file doesn't exists!");
+		}
+
+		return std::filesystem::absolute(path).string();
 	}
 
 	bool file::create_new_file(const std::string& file_path)
@@ -52,7 +63,7 @@ namespace jmc {
 	{
 		if (!exists(path))
 		{
-			throw exception::runtime_exception("file::lines: file doesn't exists!");
+			throw exception::runtime_exception("jmc::file::lines: file doesn't exists!");
 		}
 
 		std::ifstream in(path);
@@ -76,14 +87,14 @@ namespace jmc {
 	{
 		if (!exists(path))
 		{
-			throw exception::runtime_exception("file::read_binary: file doesn't exists!");
+			throw exception::runtime_exception("jmc::file::read_binary: file doesn't exists!");
 		}
 
 		std::ifstream in(path, std::ios::binary);
 
 		std::vector<char> res;
 
-		// 指定文件长度为vector容量
+		// 鎸囧畾鏂囦欢闀垮害涓簐ector瀹归噺
 		res.reserve(std::filesystem::file_size(path));
 
 		char c;
@@ -102,7 +113,7 @@ namespace jmc {
 	{
 		if (!create_new_file(path))
 		{
-			throw exception::runtime_exception("file::out: create file failed!");
+			throw exception::runtime_exception("jmc::file::out: create file failed!");
 		}
 
 		std::ofstream out(path, append ? std::ios::app : std::ios::out);
@@ -117,7 +128,7 @@ namespace jmc {
 
 		if (!create_new_file(path))
 		{
-			throw exception::runtime_exception("file::out: create file failed!");
+			throw exception::runtime_exception("jmc::file::out: create file failed!");
 		}
 
 		std::ofstream out(path, std::ios::binary | (append ? std::ios::app : std::ios::out));
@@ -135,7 +146,7 @@ namespace jmc {
 	{
 		if (!create_new_file(path))
 		{
-			throw exception::runtime_exception("file::out: create file failed!");
+			throw exception::runtime_exception("jmc::file::out: create file failed!");
 		}
 
 		std::ofstream out(path, std::ios::binary | (append ? std::ios::app : std::ios::out));

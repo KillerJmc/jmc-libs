@@ -3,9 +3,13 @@ message("Installing jmc-libs module")
 # grab headers
 set(JMC_LIBS_INCLUDE_DIR
 	${CMAKE_CURRENT_LIST_DIR}/include/com/jmc
+	${CMAKE_CURRENT_LIST_DIR}/include/com/jmc/concepts
+	${CMAKE_CURRENT_LIST_DIR}/include/com/jmc/container
 	${CMAKE_CURRENT_LIST_DIR}/include/com/jmc/exception
 	${CMAKE_CURRENT_LIST_DIR}/include/com/jmc/io
+	${CMAKE_CURRENT_LIST_DIR}/include/com/jmc/rand
 	${CMAKE_CURRENT_LIST_DIR}/include/com/jmc/str
+	${CMAKE_CURRENT_LIST_DIR}/include/com/jmc/timer
 )
 
 # grab libs
