@@ -1,4 +1,6 @@
-message("Installing jmc-libs module")
+set(JMC_LIBS_VERSION 1.0.0)
+message("-----------------------------------------------------------")
+message("Installing jmc-libs module, version: " ${JMC_LIBS_VERSION})
 
 # grab headers
 set(JMC_LIBS_INCLUDE_DIR
@@ -22,3 +24,4 @@ include_directories(${JMC_LIBS_INCLUDE_DIR})
 link_libraries(${JMC_LIBS_LIB_FILE})
 
 message("Install jmc-libs module finished!")
+message("-----------------------------------------------------------")

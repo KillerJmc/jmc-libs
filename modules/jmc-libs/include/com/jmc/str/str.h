@@ -18,7 +18,7 @@ namespace jmc
 				s: 传入字符串
 			Returns: 结果字符串
 		*/
-		static auto to_upper_case(const std::string& s)->std::string;
+		static auto to_upper_case(const std::string& s) -> std::string;
 
 		/*
 			把字符串转为小写
@@ -26,6 +26,6 @@ namespace jmc
 				s: 传入字符串
 			Returns: 结果字符串
 		*/
-		static auto to_lower_case(const std::string& s)->std::string;
+		static auto to_lower_case(const std::string& s) -> std::string;
 	};
 }
