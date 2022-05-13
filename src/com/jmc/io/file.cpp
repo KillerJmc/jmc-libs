@@ -38,7 +38,6 @@ namespace jmc
 			out.clear();
 			out.close();
 			return succeed;
-
 		}
 		return std::filesystem::is_regular_file(file_path);
 	}

@@ -20,7 +20,7 @@ file(GLOB_RECURSE SRCS CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR}/src/com/jmc/*.cpp
 
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/modules/jmc-libs/lib)
 
-set(DEBUG false)
+set(DEBUG true)
 
 if (${DEBUG})
 	add_executable(jmc-libs ${SRCS} ${PROJECT_SOURCE_DIR}/src/main.cpp)

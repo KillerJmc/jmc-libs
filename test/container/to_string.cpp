@@ -35,7 +35,7 @@ int main()
 	std::vector<std::pair<int, int>> v7 = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
 	cout << jmc::container::to_string(v7, [](const auto& p) {
 		return std::to_string(p.first) + " -> " + std::to_string(p.second);
-		}) << endl;
+	}) << endl;
 
 	std::vector<std::pair<int, int>> v8 = { { 1, 2 }, { 3, 4 }, { 5, 6 } };
 	// cause exception: complicated type without passing to_string_func parameter
