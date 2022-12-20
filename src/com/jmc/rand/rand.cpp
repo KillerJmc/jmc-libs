@@ -1,17 +1,20 @@
-#include <iostream>
-#include <rand.h>
 #include <exception.h>
+#include <rand.h>
+
+#include <iostream>
+#include <mutex>
 
 namespace jmc 
 {
-	bool rand::inited = false;
+
+	namespace
+	{
+		::std::once_flag inited;
+	}
 
 	void rand::init_seed()
 	{
-		if (!inited)
-		{
-			std::srand((unsigned int) std::time(nullptr));
-		}
+		::std::call_once(inited, [](){ ::srand(static_cast<unsigned int>(::time(nullptr))); });
 	}
 
 	int rand::next_int(int min_inclusive, int max_inclusive)
