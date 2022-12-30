@@ -1,12 +1,11 @@
-#include <exception.h>
-#include <rand.h>
-
 #include <iostream>
 #include <mutex>
+#include <jmc-libs/rand.h>
+#include <jmc-libs/exception.h>
+
 
 namespace jmc 
 {
-
 	namespace
 	{
 		::std::once_flag inited;

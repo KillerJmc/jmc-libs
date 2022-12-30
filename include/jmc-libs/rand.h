@@ -13,11 +13,6 @@ namespace jmc
 	{
 	private:
 		/*
-			是否初始化完成
-		*/
-		static bool inited;
-
-		/*
 			初始化随机数种子
 		*/
 		static void init_seed();

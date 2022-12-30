@@ -2,16 +2,34 @@
 
 # jmc-libs
 
+
+
 ## Description
 
 Providing a great number of utility classes to simplify the **C++** daily development.
 
+
+
 ## Usage
 
-1. Copy **modules** directory under the root path of this project to the root path of your **personal project**.
-2. In **CmakeLists.txt**, add command `include(${PROJECT_SOURCE_DIR}/modules/jmc-libs/install.cmake)` <br>
-before the command **add_executable** to include this library.
+Add the following commands to the top level **CmakeLists.txt** of your CMake project:
+
+```cmake
+include(FetchContent)
+FetchContent_Declare(
+	JmcLibs
+	GIT_REPOSITORY https://github.com/KillerJmc/jmc-libs
+	GIT_TAG        ${LATEST_VERSION}
+)
+FetchContent_MakeAvailable(JmcLibs)
+link_libraries(JmcLibs::jmc-libs)
+```
+
+
 
 ## Notice
 
-This library only supports **CMake** projects.
+Since GCC and Clang have not implemented the formatting, concept and other features of C++20, this tool now can only run on MSVC compiler.
+
+
+
