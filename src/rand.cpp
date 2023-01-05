@@ -6,11 +6,15 @@
 
 namespace jmc 
 {
+	// Modified by GinShio in 2022.12.20
+	// Add thread safe
 	namespace
 	{
 		::std::once_flag inited;
 	}
 
+	// Modified by GinShio in 2022.12.20
+	// Add thread safe
 	void rand::init_seed()
 	{
 		::std::call_once(inited, [](){ ::srand(static_cast<unsigned int>(::time(nullptr))); });
