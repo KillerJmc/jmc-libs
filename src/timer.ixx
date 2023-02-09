@@ -1,9 +1,9 @@
-#pragma once
+export module jmclibs.timer;
 
-#include <iostream>
-#include <ctime>
+import "iostream";
+import "ctime";
 
-namespace jmc
+export namespace jmc
 {
 	/*
 		计时器

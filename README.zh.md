@@ -25,11 +25,13 @@ FetchContent_MakeAvailable(JmcLibs)
 link_libraries(JmcLibs::jmc-libs)
 ```
 
+之后，您需要添加 [Visual Studio 在 CMake 中使用 C++ 20 Modules 特性](https://devblogs.microsoft.com/cppblog/cpp20-modules-in-cmake-with-vs/)的支持。
+
 
 
 ## 注意
 
-由于GCC和Clang尚未实现C++20的formatting, concept等特性，本工具目前只能在MSVC编译器上运行。
+由于GCC和Clang尚未实现C++20的formatting, concept, modules等特性，本工具目前只能在MSVC编译器上运行。
 
 
 

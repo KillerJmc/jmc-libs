@@ -1,10 +1,11 @@
-#include <iostream>
-#include <jmc-libs/all.h>
-#include <gtest/gtest.h>
+#include "gtest/gtest.h"
+
+import "iostream";
+import jmclibs.container;
 
 using std::cout, std::endl;
 
-TEST(ContainerTest, testArray) 
+TEST(ContainerTest, testArray)
 {
 	int a[] = { 1, 2, 3, 4, 5, 6 };
 

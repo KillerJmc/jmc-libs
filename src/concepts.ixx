@@ -1,9 +1,9 @@
-#pragma once
+export module jmclibs.concepts;
 
-#include <iostream>
-#include <algorithm>
+import "iostream";
+import "algorithm";
 
-namespace jmc
+export namespace jmc
 {
 	/*
 		常用概念

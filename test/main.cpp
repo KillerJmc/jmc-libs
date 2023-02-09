@@ -1,5 +1,5 @@
-﻿#include <iostream>
-#include <jmc-libs/all.h>
+﻿import "iostream";
+import jmclibs.all;
 
 using std::cout, std::endl;
 

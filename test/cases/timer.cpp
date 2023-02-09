@@ -1,6 +1,7 @@
-#include <iostream>
-#include <jmc-libs/all.h>
 #include <gtest/gtest.h>
+
+import "iostream";
+import jmclibs.timer;
 
 TEST(TimerTest, test)
 {

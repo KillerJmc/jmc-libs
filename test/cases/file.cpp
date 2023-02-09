@@ -1,14 +1,15 @@
-#include <iostream>
-#include <jmc-libs/all.h>
 #include <gtest/gtest.h>
+
+import "iostream";
+import jmclibs.file;
 
 using std::cout, std::endl;
 
-TEST(FileTest, test) 
+TEST(FileTest, test)
 {
 	// 文件名
 	auto file_name = "a.txt";
-	
+
 	// 获取全路径
 	auto absolute_path = jmc::file::absolute_path(".");
 	auto file_path = absolute_path + "/" + "a.txt";

@@ -25,11 +25,13 @@ FetchContent_MakeAvailable(JmcLibs)
 link_libraries(JmcLibs::jmc-libs)
 ```
 
+Then, you need to add support for [C++ 20 Modules in CMake with Visual Studio](https://devblogs.microsoft.com/cppblog/cpp20-modules-in-cmake-with-vs/).
+
 
 
 ## Notice
 
-Since GCC and Clang have not implemented the formatting, concept and other features of C++20, this tool now can only run on MSVC compiler.
+Since GCC and Clang have not implemented the formatting, concept, modules and other features of C++20, this tool now can only run on MSVC compiler.
 
 
 

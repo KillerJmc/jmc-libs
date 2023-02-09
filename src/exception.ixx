@@ -1,8 +1,8 @@
-#pragma once
+export module jmclibs.exception;
 
-#include <iostream>
+import "iostream";
 
-namespace jmc 
+export namespace jmc 
 {
 	/*
 		异常
@@ -20,12 +20,14 @@ namespace jmc
 			std::string _message;
 
 		public:
-			explicit runtime_exception(const std::string& message) : _message(message) {
+			explicit runtime_exception(const std::string& message) : _message(message)
+			{
 				// 初始化时打印异常信息
 				std::cout << message << std::endl;
 			}
 
-			const char* what() const noexcept override {
+			const char* what() const noexcept override 
+			{
 				return _message.c_str();
 			}
 		};

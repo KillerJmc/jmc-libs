@@ -1,13 +1,13 @@
-#pragma once
+export module jmclibs.container;
 
-#include <iostream>
-#include <string>
-#include <format>
-#include <functional>
-#include <jmc-libs/concepts.h>
-#include <jmc-libs/exception.h>
+import jmclibs.concepts;
+import jmclibs.exception;
+import "iostream";
+import "string";
+import "format";
+import "functional";
 
-namespace jmc 
+export namespace jmc 
 {
 	/*
 		数组操作类
