@@ -2,18 +2,11 @@ export module jmclibs.rand;
 
 import jmclibs.exception;
 import "iostream";
-import "mutex";
 import "ctime";
+import "mutex";
 
 namespace jmc 
 {
-	// Modified by GinShio in 2022.12.20
-	// Add thread safe
-	namespace
-	{
-		::std::once_flag inited;
-	}
-
 	/*
 		随机数类
 		Since: 1.0
@@ -29,6 +22,7 @@ namespace jmc
 		{
 			// Modified by GinShio in 2022.12.20
 			// Add thread safe
+			static ::std::once_flag inited;
 			::std::call_once(inited, []() { ::srand(static_cast<unsigned int>(::_time64(nullptr))); });
 		}
 
